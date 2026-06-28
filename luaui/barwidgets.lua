@@ -20,6 +20,7 @@ local gl = gl
 local CONFIG_FILENAME = LUAUI_DIRNAME .. 'Config/' .. Game.gameShortName .. '.lua'
 local WIDGET_DIRNAME = LUAUI_DIRNAME .. 'Widgets/'
 local RML_WIDGET_DIRNAME = LUAUI_DIRNAME .. 'RmlWidgets/'
+local CUSTOM_WIDGET_DIRNAME = 'custom/luaui/widgets/'
 
 local SELECTOR_BASENAME = 'selector.lua'
 
@@ -379,6 +380,7 @@ function widgetHandler:Initialize()
 
 	loadWidgetFiles(WIDGET_DIRNAME, VFS.ZIP)
 	loadWidgetFiles(RML_WIDGET_DIRNAME, VFS.ZIP)
+	loadWidgetFiles(CUSTOM_WIDGET_DIRNAME, VFS.ZIP)
 
 	table.sort(unsortedWidgets, function(w1, w2)
 		local l1 = w1.whInfo.layer
